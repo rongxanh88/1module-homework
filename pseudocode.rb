@@ -12,3 +12,5 @@ if the response is "GOODBYE", increment a "goodbye" counter by one (start from z
 else if counter is 2, reply back and close the program.
     
 Create a loop with the above program, so that it keeps requesting input from user.
+
+Making change to add a new git commit.
