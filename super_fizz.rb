@@ -1,13 +1,11 @@
-=begin
+
 gem 'minitest'
 require 'minitest/pride'
-require 'minitest/autotest'
+require 'minitest/autorun'
 
 class Super_Fizz < Minitest::Test
-=end
 
-
-  for number in (0..1000) do
+  def self.super_fizz_buzz(number)
     if ((number % 3 == 0) and (number % 5 == 0) and (number % 7 == 0))
       puts "SuperFizzBuzz\n"
     elsif ((number % 3 == 0) and (number % 7 == 0))
@@ -25,4 +23,8 @@ class Super_Fizz < Minitest::Test
     end
   end
     
-#end
+end
+
+for number in (0..1000) do
+  Super_Fizz.super_fizz_buzz(number)
+end
