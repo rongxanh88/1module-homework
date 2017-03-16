@@ -22,9 +22,26 @@ class Super_Fizz < Minitest::Test
       puts "#{number}\n"
     end
   end
-    
+
+  def self.super_fizz_buzz_concatenation(number)
+    word = ""
+
+    word += "Super" if number % 7 == 0
+    word += "Fizz" if number % 3 == 0
+    word += "Buzz" if number % 5 == 0
+
+    word = number if word.empty?
+
+    puts "#{word}\n"
+  end
+  
 end
 
 for number in (0..1000) do
   Super_Fizz.super_fizz_buzz(number)
+end
+
+
+for number in (0..1000) do
+  Super_Fizz.super_fizz_buzz_concatenation(number)
 end
