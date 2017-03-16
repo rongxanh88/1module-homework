@@ -37,6 +37,34 @@ class Super_Fizz < Minitest::Test
   
 end
 
+def time_method(method=nil, *args)
+  beginning_time = Time.now
+  if block_given?
+    yield
+  else
+    self.send(method, args)
+  end
+  end_time = Time.now
+  puts "Time elapsed #{(end_time - beginning_time)*1000} milliseconds"
+end
+
+time_method do
+
+  #what ever code you want to time
+  
+  # for number in (0..1000) do
+  #   Super_Fizz.super_fizz_buzz(number)
+  # end
+
+
+  for number in (0..1000) do
+    Super_Fizz.super_fizz_buzz_concatenation(number)
+  end
+
+end
+
+
+=begin
 for number in (0..1000) do
   Super_Fizz.super_fizz_buzz(number)
 end
@@ -45,3 +73,5 @@ end
 for number in (0..1000) do
   Super_Fizz.super_fizz_buzz_concatenation(number)
 end
+
+=end
